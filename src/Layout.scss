@@ -1,0 +1,31 @@
+.app-layout {
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+
+  &.collapsed {
+    width: 60px;
+
+    .nav-link {
+      font-size: 0;
+      padding: 0.5rem 0.6rem;
+      &::before {
+        content: attr(data-icon);
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .toggle-btn {
+    align-self: flex-end;
+  }
+}
+
+.main-content {
+  flex-grow: 1;
+}

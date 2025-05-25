@@ -1,0 +1,15 @@
+.header {
+//   border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid red;
+
+  .profile-dropdown {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .bi-bell {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+}
