@@ -57,56 +57,18 @@
 // export default Sidebar;
 
 
-// import { useState } from "react";
-// import { Link } from "react-router-dom";
-// import "./Sidebar.scss"; // Import your SCSS file
-
-// const SIDEBAR_ITEMS = [
-//   { name: "Overview", icon: "📊", href: "/" },
-//   { name: "Products", icon: "🛍️", href: "/products" },
-//   { name: "Users", icon: "👥", href: "/users" },
-//   { name: "Sales", icon: "💰", href: "/sales" },
-//   { name: "Orders", icon: "🛒", href: "/orders" },
-//   { name: "Analytics", icon: "📈", href: "/analytics" },
-//   { name: "Settings", icon: "⚙️", href: "/settings" },
-// ];
-
-// const Sidebar = () => {
-//   const [isOpen, setIsOpen] = useState(true);
-
-//   return (
-//     <div className={`sidebar ${isOpen ? "expanded" : "collapsed"}`}>
-//       <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-//         ☰
-//       </button>
-//       <nav className="menu">
-//         {SIDEBAR_ITEMS.map((item) => (
-//           <Link key={item.href} to={item.href} className="menu-item">
-//             <span className="icon">{item.icon}</span>
-//             {isOpen && <span className="label">{item.name}</span>}
-//           </Link>
-//         ))}
-//       </nav>
-//     </div>
-//   );
-// };
-
-// export default Sidebar;
-
-
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Nav, Button } from "react-bootstrap";
-import "./Sidebar.scss";
+import { Link } from "react-router-dom";
+import "./Sidebar.scss"; // Import your SCSS file
 
 const SIDEBAR_ITEMS = [
-  { name: "Overview", href: "/" },
-  { name: "Products", href: "/products" },
-  { name: "Users", href: "/users" },
-  { name: "Sales", href: "/sales" },
-  { name: "Orders", href: "/orders" },
-  { name: "Analytics", href: "/analytics" },
-  { name: "Settings", href: "/settings" },
+  { name: "Overview", icon: "📊", href: "/" },
+  { name: "Products", icon: "🛍️", href: "/products" },
+  { name: "Users", icon: "👥", href: "/users" },
+  { name: "Sales", icon: "💰", href: "/sales" },
+  { name: "Orders", icon: "🛒", href: "/orders" },
+  { name: "Analytics", icon: "📈", href: "/analytics" },
+  { name: "Settings", icon: "⚙️", href: "/settings" },
 ];
 
 const Sidebar = () => {
@@ -114,24 +76,62 @@ const Sidebar = () => {
 
   return (
     <div className={`sidebar ${isOpen ? "expanded" : "collapsed"}`}>
-      <Button variant="light" onClick={() => setIsOpen(!isOpen)} className="toggle-btn">
+      <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
         ☰
-      </Button>
-      <Nav className="flex-column mt-3">
+      </button>
+      <nav className="menu">
         {SIDEBAR_ITEMS.map((item) => (
-          <NavLink
-            key={item.href}
-            to={item.href}
-            className="sidebar-link"
-            activeClassName="active"
-          >
-            <span className="icon">🔹</span>
+          <Link key={item.href} to={item.href} className="menu-item">
+            <span className="icon">{item.icon}</span>
             {isOpen && <span className="label">{item.name}</span>}
-          </NavLink>
+          </Link>
         ))}
-      </Nav>
+      </nav>
     </div>
   );
 };
 
 export default Sidebar;
+
+
+// import { useState } from "react";
+// import { NavLink } from "react-router-dom";
+// import { Nav, Button } from "react-bootstrap";
+// import "./Sidebar.scss";
+
+// const SIDEBAR_ITEMS = [
+//   { name: "Overview", href: "/" },
+//   { name: "Products", href: "/products" },
+//   { name: "Users", href: "/users" },
+//   { name: "Sales", href: "/sales" },
+//   { name: "Orders", href: "/orders" },
+//   { name: "Analytics", href: "/analytics" },
+//   { name: "Settings", href: "/settings" },
+// ];
+
+// const Sidebar = () => {
+//   const [isOpen, setIsOpen] = useState(true);
+
+//   return (
+//     <div className={`sidebar ${isOpen ? "expanded" : "collapsed"}`}>
+//       <Button variant="light" onClick={() => setIsOpen(!isOpen)} className="toggle-btn">
+//         ☰
+//       </Button>
+//       <Nav className="flex-column mt-3">
+//         {SIDEBAR_ITEMS.map((item) => (
+//           <NavLink
+//             key={item.href}
+//             to={item.href}
+//             className="sidebar-link"
+//             activeClassName="active"
+//           >
+//             <span className="icon">🔹</span>
+//             {isOpen && <span className="label">{item.name}</span>}
+//           </NavLink>
+//         ))}
+//       </Nav>
+//     </div>
+//   );
+// };
+
+// export default Sidebar;
